@@ -23,7 +23,7 @@
   - Facilitates queries on mass, location, year of fall, etc.
 
 ```mermaid
-flowchart LR
+flowchart BT
     U((User)) -->|"Questions"| A[Next.js + TypeScript + Mantine]
     A -->|"Plain-English Query"| B(LLM: GPT-4)
     B -->|"Generated SQL"| A
