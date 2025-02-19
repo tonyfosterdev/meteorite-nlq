@@ -24,12 +24,12 @@
 
 ```mermaid
 flowchart LR
-    U((User)) -->|Questions| A[Next.js + TypeScript + Mantine]
-    A -->|Plain-English Query| B(LLM: GPT-4)
-    B -->|Generated SQL| A
-    A -->|SQL Queries| D[(PostgreSQL in Docker)]
-    D -->|Results| A
-    A -->|View (Table/Map/CSV)| U((User))
+    U((User)) -->|"Questions"| A[Next.js + TypeScript + Mantine]
+    A -->|"Plain-English Query"| B(LLM: GPT-4)
+    B -->|"Generated SQL"| A
+    A -->|"SQL Queries"| D[(PostgreSQL in Docker)]
+    D -->|"Results"| A
+    A -->|"View (Table/Map/CSV)"| U((User))
 ```
 
 ---
