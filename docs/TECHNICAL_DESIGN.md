@@ -22,6 +22,16 @@
   - NASA Meteorite data (CSV) imported into a `meteorites` table
   - Facilitates queries on mass, location, year of fall, etc.
 
+```mermaid
+flowchart BT
+    U((User)) -->|"Questions"| A[Next.js + TypeScript + Mantine]
+    A -->|"Plain-English Query"| B(LLM: GPT-4)
+    B -->|"Generated SQL"| A
+    A -->|"SQL Queries"| D[(PostgreSQL in Docker)]
+    D -->|"Results"| A
+    A -->|"View (Table/Map/CSV)"| U((User))
+```
+
 ---
 
 This design provides:
