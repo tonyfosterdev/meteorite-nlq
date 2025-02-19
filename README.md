@@ -32,7 +32,7 @@ MeteoriteNLQ is a web application that enables users to ask natural language que
 In the project root, create a file named `.env.local` containing environment variables:
 
    ```bash
-DATABASE_URL="postgres://your_user:your_password@localhost:5432/your_db"
+   DATABASE_URL="postgres://your_user:your_password@localhost:5432/your_db"
    OPENAI_API_KEY="your_openai_key"
    ```
 1. **Run the Application**
