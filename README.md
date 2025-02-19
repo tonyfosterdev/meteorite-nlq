@@ -28,12 +28,12 @@ MeteoriteNLQ is a web application that enables users to ask natural language que
    docker compose up -d
    ```
    This spins up a local PostgreSQL instance with the meteorite data seeded.
-1.**Create .env.local**
+1. **Create .env.local**
 In the project root, create a file named `.env.local` containing environment variables:
 
-```bash
+   ```bash
 DATABASE_URL="postgres://your_user:your_password@localhost:5432/your_db"
-OPENAI_API_KEY="your_openai_key"
+   OPENAI_API_KEY="your_openai_key"
 ```
 1. **Run the Application**
    ```bash
