@@ -81,6 +81,13 @@ export default function HomePage() {
 
       <Space h="md" />
 
+
+      <Text>
+        Type your question/statement in the field below and click the "Ask" button. Unfortunately, hitting "Enter" or "Return" will not submit your input. It's on our TODO list.
+      </Text>
+
+      <Space h="md" />
+
       <Flex gap="md" w="100%">
         <TextInput
           placeholder="What would you like to know?"
