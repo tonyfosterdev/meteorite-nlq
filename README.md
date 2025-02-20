@@ -6,17 +6,19 @@ MeteoriteNLQ is a web application that enables users to ask natural language que
 
 - [Product Specification](./docs/PRODUCT_SPEC.md)
 - [Technical Design](./docs/TECHNICAL_DESIGN.md)
+- [Project Notes](./docs/PROJECT_NOTES.md)
 
 ## Requirements
 
-- **Node.js v20** (with npm)
-- **Docker** (with **Docker Compose**)
+- Node.js v20 (with npm)
+- Docker (with Docker Compose)
+- An OpenAI API key with credits (See this [Project Notes section](docs/PROJECT_NOTES.md#a-note-on-openai-api-keys) for information on this.) 
 
 ## Getting Started
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/YourUsername/meteorite-nlq.git
+   git clone https://github.com/tonyfosterdev/meteorite-nlq.git
    cd meteorite-nlq
    ```
 1. **Install node dependencies**
@@ -32,7 +34,7 @@ MeteoriteNLQ is a web application that enables users to ask natural language que
 In the project root, create a file named `.env.local` containing environment variables:
 
    ```bash
-   DATABASE_URL="postgres://your_user:your_password@localhost:5432/your_db"
+   DATABASE_URL=postgres://meteorite-user:password123@localhost:5432/meteorites
    OPENAI_API_KEY="your_openai_key"
    ```
 1. **Run the Application**
