@@ -3,7 +3,7 @@
 I want to extend my thanks for the opportunity to work on this project. It was a fun experience that let me explore interesting data and tools.
 
 ## Reconciliation of Product Spec with Current State and Timeline
-I spent around 4–5 hours on this project, plus some additional time for cleanup and documentation. With more time, I would:
+I spent around 6 hours on this project, plus some additional time for cleanup and documentation. With more time, I would:
 
 - Add safeguards to the semantic parser by implementing an "Query Intent System" with predefined queries. This would enhance safety and reliability.  
 - Implement an "Output Intent Parser" to determine the user's desired output format, ensuring queries return data in the most relevant way.  
