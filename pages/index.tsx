@@ -36,7 +36,7 @@ export default function HomePage() {
       const { items } = await response.json();
       setData(items);
     } catch (error) {
-      setErrorMessage("An error occured, please try again. If it continues, please modify your query.")
+      setErrorMessage("An error occurred, please try again. If it continues, please modify your query.")
     } finally {
       setLoading(false);
     }
@@ -70,7 +70,7 @@ export default function HomePage() {
 
       <Text>
         This project aims to demonstrate how we can leverage LLMs to create natural language querying of NASA's meteorite strike data. It uses a process of
-        LLM semantic parsing with OpenAI. If you're using this for scientific research (lol) make sure to verify your results. Note: some of the results could be incorrect (meteor-wrong 😎).
+        LLM semantic parsing with OpenAI. If you're using this for scientific research (lol), make sure to verify your results. Note: some of the results could be incorrect (meteor-wrong 😎).
       </Text>
 
       <Space h="md" />
