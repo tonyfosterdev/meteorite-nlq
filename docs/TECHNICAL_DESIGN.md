@@ -12,7 +12,7 @@ Provide an environment using open tools allowing for rapid development and proof
   - Next.js Handles structure, building, and bundling of the application
   - Provides a great environment for rapid development of full stack web applications
   - Great community adoption and support (See [Vercel](https://vercel.com/))
-  - Fontend tools: React + Mantine UI (See [Key Feature 4 in product spec](PRODUCT_SPEC.md#key-features))
+  - Fontend tools: React + Mantine UI (See [Key Features 1 and 4 in product spec](PRODUCT_SPEC.md#key-features))
     - React supported by Next.js out of the box
     - [Mantine](https://mantine.dev/) provides clean, easy to use UI components without too much effort
     - Mantine community provided a nice, [preconfigured Next.js template repository](https://github.com/mantinedev/next-pages-min-template) to hit the ground running
