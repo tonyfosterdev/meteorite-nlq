@@ -12,18 +12,18 @@ Provide an environment using open tools allowing for rapid development and proof
   - Next.js Handles structure, building, and bundling of the application
   - Provides a great environment for rapid development of full stack web applications
   - Great community adoption and support (See [Vercel](https://vercel.com/))
-  - Fontend tools: React + Mantine UI
+  - Fontend tools: React + Mantine UI (See [Key Feature 4 in product spec](PRODUCT_SPEC.md#key-features))
     - React supported by Next.js out of the box
     - [Mantine](https://mantine.dev/) provides clean, easy to use UI components without too much effort
     - Mantine community provided a nice, [preconfigured Next.js template repository](https://github.com/mantinedev/next-pages-min-template) to hit the ground running
   - Backend tools: Next.js's page routing
     - Page routing for a basic HTTP API, suitable for this small project
-    - Supports porting of data to desired output formats of user
+    - Supports porting of data to desired output formats of user (See [Key Feature 2 in product spec](PRODUCT_SPEC.md#key-features))
 
-### 2. Semantic Parsing with an LLM
+### 2. Semantic Parsing with an LLM 
   - Lives in the backend, referred to as the `Semantic Parsing Layer` in code
   - Handles parsing user queries into executable SQL
-  - Leverage OpenAI GPT-4o LLM with few-shot prompting method to translate English to SQL
+  - Leverage OpenAI GPT-4o LLM with few-shot prompting method to translate English to SQL (See [Key Feature 3 in product spec](PRODUCT_SPEC.md#key-features))
 
 ### 3. Data Layer (PostgreSQL)
   - The target of the Semantic Parsing Layer's generated SQL
