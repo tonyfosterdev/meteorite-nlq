@@ -1,6 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { MeteoriteService } from '../services/MeteoriteService';
-import { LLMService } from '../services/LLMService';
+
+// This is our simple HTTP API. It's not strict, but using supports using GET
+// (and other methods if you want) to query the data. It takes a single
+// query parameter (named query) that represents the user's English input.
+// If left empty, the first 15 rows of meteorite data will be returned.
 
 const meteoriteService = new MeteoriteService()
 

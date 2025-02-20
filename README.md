@@ -1,6 +1,6 @@
 # MeteoriteNLQ
 
-MeteoriteNLQ is a web application that enables users to ask natural language questions about meteorite data and view results in multiple formats (tables, maps, CSV). This project leverages Next.js, Mantine for UI, and a semantic parsing layer that translates queries into SQL—connecting to a local PostgreSQL database (seeded with NASA’s meteorite dataset).
+MeteoriteNLQ is a web application that enables users to ask natural language questions about meteorite data and view results in multiple formats (tables, maps, CSV). This project leverages Next.js, Mantine for UI, and a semantic parsing service that translates queries into SQL—connecting to a local PostgreSQL database (seeded with NASA’s meteorite dataset).
 
 ## Documentation
 

@@ -8,6 +8,7 @@ I spent around 4–5 hours on this project, plus some additional time for cleanu
 - Add safeguards to the semantic parser by implementing an "Query Intent System" with predefined queries. This would enhance safety and reliability.  
 - Implement an "Output Intent Parser" to determine the user's desired output format, ensuring queries return data in the most relevant way.  
 - Implement additional view types—such as **CSV downloads** and **map visualizations** (e.g., with [React Leaflet](https://react-leaflet.js.org/)). These would be chosen using the intended output from the "Output Intent System".
+- Add paging for dealing with larger result sets.
 
 This was my first time using **Next.js**, so some of my effort went into understanding the project structure. The Mantine-based UI was straightforward, and the semantic parsing was relatively direct.
 

@@ -21,7 +21,7 @@ Provide an environment using open tools allowing for rapid development and proof
     - Supports porting of data to desired output formats of user (See [Key Feature 2 in product spec](PRODUCT_SPEC.md#key-features))
 
 ### 2. Semantic Parsing with an LLM 
-  - Lives in the backend, referred to as the `Semantic Parsing Layer` in code
+  - Lives in the backend, referred to as the `Semantic Parsing Service` in code
   - Handles parsing user queries into executable SQL
   - Leverage OpenAI GPT-4o LLM with few-shot prompting method to translate English to SQL (See [Key Feature 3 in product spec](PRODUCT_SPEC.md#key-features))
 
@@ -52,8 +52,9 @@ flowchart BT
 ## ⚠️ Limitations ⚠️
 
 1. This design relies on an LLM with limited testing of prompts. Results may be innaccurate.
-2. The Semantic Parsing Layer returns raw SQL that is NOT sanitized against SQL injection attacks. If this is deployed in production, the following should be considered:
+2. The Semantic Parsing Service returns raw SQL that is NOT sanitized against SQL injection attacks. If this is deployed in production, the following should be considered:
   - Use another LLM to help look for dangerous queries
   - Configure your postgres infrastructure to use readonly access to prevent bad queries from corrupting your data
   - Put strict timeouts and limitations on resource usage
   - **Strongly consider building intent-based interpreting of English queries to map back to predefined, safe queries, this is the safest approach but requires more testing.**
+3. There are currently no boundaries on how much data can be returned. We should use paging for this.

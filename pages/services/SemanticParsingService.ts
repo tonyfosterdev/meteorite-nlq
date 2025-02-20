@@ -1,15 +1,17 @@
 import OpenAI from "openai";
-import { ChatCompletionMessage, ChatCompletionMessageParam } from "openai/resources";
+import { ChatCompletionMessageParam } from "openai/resources";
 
-export interface LLMServiceInterface {
-  generateSqlQuery(userQuery: string): Promise<string>;
+// A helpful interface for defining semantic parsing services
+export interface SemanticParsingServiceInterface {
+  parseToSql(userQuery: string): Promise<string>;
 }
 
-export class LLMService implements LLMServiceInterface {
-  async generateSqlQuery(userQuery: string): Promise<string> {
+// A Semantic Parsing Service leveraging OpenAI GPT 4o 
+export class OpenAIGpt4oSemanticParsingService implements SemanticParsingServiceInterface {
+  async parseToSql(userQuery: string): Promise<string> {
     const openai = new OpenAI();
 
-
+    // Set up a few-shot prompt
     const messages: Array<ChatCompletionMessageParam> = [
       {
         role: "system",
@@ -34,7 +36,7 @@ All queries must be valid SQL that can run against a PostgreSQL database. Select
 Return only the SQL code, nothing else. When ordering based on mass_g or year, only consider values that are not null.
 `
       },
-      // --- Few-shot example #1 ---
+      // Shot #1
       {
         role: "user",
         content: "How many meteorites have fallen since 1950?"
@@ -48,7 +50,7 @@ WHERE fall = 'Fell'
   AND year >= 1950;
 `.trim()
       },
-      // --- Few-shot example #2 ---
+      // Shot #2
       {
         role: "user",
         content: "What is the most common classification of a meteorite?"
@@ -63,7 +65,7 @@ ORDER BY num_meteorites DESC
 LIMIT 1;
 `.trim()
       },
-      // --- Few-shot example #3 ---
+      // Shot #3
       {
         role: "user",
         content: "Show me the heaviest 10 meteorites that were found"
@@ -78,7 +80,7 @@ ORDER BY mass_g DESC
 LIMIT 10;
 `.trim()
       },
-      // --- Our new question ---
+      // And finally, our query
       {
         role: "user",
         content: userQuery
@@ -86,7 +88,7 @@ LIMIT 10;
     ];
 
     const gptResponse = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "gpt-4o",  // This could be parameterized if we wanted to get DRY
       store: false,
       messages,
     });
@@ -94,6 +96,4 @@ LIMIT 10;
     const sql = gptResponse.choices[0]?.message?.content?.trim() || "";
     return sql;
   }
-
 }
-

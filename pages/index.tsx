@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Table, Text, TextInput, Button, Title, Container, Space, Flex, Box } from '@mantine/core';
 import { Meteorite } from './dto/Meteorite';
 
+// Some helper functions for dealing with possibly missing meteorite properties (some values are null)
 const tdIfExists = (item: string | number | undefined | null) => item !== undefined ? <Table.Td>{item}</Table.Td> : undefined;
 const thIfExists = (item: string | number | undefined | null, header: string) => item !== undefined ? <Table.Th>{header}</Table.Th> : undefined;
 const rowMapper = (row: Meteorite, index: number) =>
@@ -18,11 +19,13 @@ const rowMapper = (row: Meteorite, index: number) =>
   </Table.Tr>
 
 export default function HomePage() {
-  const [inputValue, setInputValue] = useState('');
-  const [data, setData] = useState<Meteorite[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>();
+  const [inputValue, setInputValue] = useState('');  // The input value
+  const [data, setData] = useState<Meteorite[]>([]);  // The data to display
+  const [loading, setLoading] = useState<boolean>(false);  // A loading indicator
+  const [errorMessage, setErrorMessage] = useState<string>();  // Error message, if one occurs
 
+  // This is where we fetch data with the user's input.
+  // In the future, a similar method could be used to get the user's output intent.
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -89,7 +92,7 @@ export default function HomePage() {
       </Flex>
 
       <Space h="md" />
-
+      { /* If there's an error, show it, otherwise show the table. */}
       {errorMessage || table}
 
       <Space h="md" />
